@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}Edit Item{% endblock %}
+
+{% block content %}
+{% for item in user.items %}
+{% if item.id == id %}
+<form method="POST">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <input name="itemName" id="itemName" class="form-control col-sm" placeholder="Name" value="{{ item.itemName }}" />
+            </div>
+            <div class="col">
+                <input name="units" id="units" class="form-control col-sm" placeholder="Units" value="{{ item.units }}" />
+            </div>     
+            <div class="col">
+                <input name="price" id="price" class="form-control col-sm" placeholder="Price" value="{{ item.price }}" />
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary mt-4">Update Item</button>
+    </div>
+</form>
+{% endif %}
+{% endfor %}
+{% endblock %}
