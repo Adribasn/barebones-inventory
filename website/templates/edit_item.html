@@ -7,13 +7,13 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col">
-                <input name="itemName" id="itemName" class="form-control col-sm" placeholder="Name" value="{{ item.itemName }}" />
+                <input required="true" name="itemName" id="itemName" class="form-control col-sm" placeholder="Name" value="{{ item.itemName }}" />
             </div>
             <div class="col">
-                <input name="units" id="units" class="form-control col-sm" placeholder="Units" value="{{ item.units }}" />
+                <input type="number" min="0" step="1" required="true" name="units" id="units" class="form-control col-sm" placeholder="Units" value="{{ item.units }}" />
             </div>     
             <div class="col">
-                <input name="price" id="price" class="form-control col-sm" placeholder="Price" value="{{ item.price }}" />
+                <input type="number" min="0.00" step="0.01" required="true" name="price" id="price" class="form-control col-sm" placeholder="Price" value="{{ item.price }}" />
             </div>
         </div>
     </div>
